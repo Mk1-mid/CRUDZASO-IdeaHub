@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Premium User Profile | IdeaHub</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<!-- Google Fonts requeridas según documento -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<!-- CSS de perfil de usuario -->
+<link rel="stylesheet" href="./assets/user-profile.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --deep-charcoal: #0a0a0c;
+        --card-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --vibrant-violet: #8b5cf6;
+        --soft-gray: #9ca3af;
+      }
+      body {
+        background-color: var(--deep-charcoal);
+        color: white;
+      }
+      .glass-card {
+        background: var(--card-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+      }
+      .gradient-border {
+        background: linear-gradient(var(--deep-charcoal), var(--deep-charcoal)) padding-box,
+                    linear-gradient(135deg, var(--vibrant-violet), #4f46e5) border-box;
+        border: 4px solid transparent;
+      }
+      .idea-hover:hover {
+        background: rgba(139, 92, 246, 0.05);
+        border-color: rgba(139, 92, 246, 0.3);
+      }
+    </style>
+</head>
+<body class="font-['Manrope']">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between border-b border-white/10 px-10 py-5 bg-[#0a0a0c]/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-xl bg-violet-600/20 text-violet-400">
+<span class="material-symbols-outlined text-2xl">lightbulb</span>
+</div>
+<h2 class="text-white text-xl font-extrabold tracking-tight">IdeaHub</h2>
+</div>
+<div class="flex items-center gap-10">
+<nav class="flex items-center gap-8">
+<a class="text-gray-400 hover:text-white text-sm font-semibold transition-colors" href="#">Home</a>
+<a class="text-white text-sm font-semibold border-b-2 border-violet-500 pb-1" href="#">My Profile</a>
+<a class="text-gray-400 hover:text-white text-sm font-semibold transition-colors" href="#">Explore</a>
+</nav>
+<div class="flex items-center gap-4 pl-6 border-l border-white/10">
+<button class="px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-bold transition-all">
+                Logout
+              </button>
+<div class="size-10 rounded-full border border-violet-500/50 p-0.5">
+<div class="w-full h-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4FryH-u01LoKt-IwTwHTpi71aCMTevllA8xhf-aiVKqcCFs6wLY8lpRXqqt1PFxhR8vhOqXxFMAZQUjww8sABkodGLG-qnMuY7FjY4zXYrc5wQXfnOHIrG1xze-Szl08kHmtNCxlYNpDFdgdb3wl3bcG-v_M-WZm3T9dQhjPFhQpLCNbOSAfFTlwglvHKaG9zU1Z2ZQltgj4_ejqO6TJuH8Fl2SBhiy1FRs892wx4l-E3ZyguKeVqVmDTRWkF4ei-jbK7UJBx6ek");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-10 py-12 max-w-7xl mx-auto w-full">
+<div class="flex flex-col md:flex-row items-center md:items-end gap-8 mb-16">
+<div class="relative">
+<div class="size-48 rounded-full gradient-border p-1 overflow-hidden">
+<div class="w-full h-full rounded-full bg-cover bg-center bg-[#1a1a1c]" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWcVmlRkaNi98vV9Qq7q77qxbAI6UO69dpIE7cND7_5Gpx2ZIL8MAJBoBtaNIQD-4fTMp8mVcWOa2nwZ_ANPknM_tLIYLU1PVMcLT0HUzk7nmVDGYRZOICyn8Qx9lgcOL8dBYVlkuqwtpArZJ7X01RjjlK468TdB79Y5vOnaWVNQCK46ADUwcWgTgK1oY0xKNzuvWW5_xLFbmYLlUsIT0fX1vn-wr7jp_AjIo_7p1FxMLZkNXU6txvTzCeaR33b5i245cGs-Olla0");'></div>
+</div>
+<div class="absolute bottom-2 right-2 size-8 bg-violet-500 rounded-full border-4 border-[#0a0a0c] flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xs">verified</span>
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex flex-col gap-1">
+<h1 class="text-4xl font-extrabold tracking-tight text-white">Sophia Clark</h1>
+<p class="text-violet-400 font-medium tracking-wide uppercase text-xs">Senior Product Strategist</p>
+<div class="flex items-center justify-center md:justify-start gap-2 mt-2 text-gray-400">
+<span class="material-symbols-outlined text-sm">mail</span>
+<p class="text-sm">sophia.clark@crudzaso.com</p>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-3xl p-8 min-w-[240px] flex flex-col items-center justify-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 text-violet-500 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-6xl">insights</span>
+</div>
+<p class="text-gray-400 text-sm font-bold uppercase tracking-[0.2em] mb-2">Total Ideas</p>
+<p class="text-white text-6xl font-black leading-none bg-clip-text">12</p>
+</div>
+</div>
+<div class="flex items-center gap-4 mb-8">
+<h2 class="text-xl font-bold text-white whitespace-nowrap">Active Initiatives</h2>
+<div class="h-px w-full bg-gradient-to-r from-white/10 to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+<div class="glass-card idea-hover group rounded-2xl p-6 transition-all duration-300 flex gap-6 cursor-pointer">
+<div class="w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+<div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4UqKdTKcD8oaGF7Ja1M0FfgxYNmhB4MZdUbusGkLxRVTMESvyjD_yz9hZqtgNMD-A3pxDeFYEwlOSI4VzIv5sdn1OxYQVRg5MmxEtTV1iq1snT6lU4v07IgBZrbQxfORmmjbQdHm7sa5qEfljAmPid7brYngOuqR5kFIZVPVGiX0iLP78EPyupYmLoc7psukFHquxiimFSm94jQTTrKFnAShQAmESoqGVQNhZ8V4UebWIEsQJjYsYOP6O4SY9ebiiEmBXOsJ8YQE");'></div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<span class="text-[10px] uppercase tracking-widest text-violet-400 font-bold">Innovation • AI</span>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-violet-300 transition-colors">AI-Powered Customer Service Chatbot</h3>
+<p class="text-gray-500 text-sm line-clamp-2">Next-generation language models applied to internal support tickets.</p>
+<div class="flex items-center gap-4 mt-2 text-gray-400">
+<span class="text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">thumb_up</span> 24</span>
+<span class="text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat_bubble</span> 8</span>
+</div>
+</div>
+</div>
+<div class="glass-card idea-hover group rounded-2xl p-6 transition-all duration-300 flex gap-6 cursor-pointer">
+<div class="w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+<div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQUB8xLgWH-HHen2zhx6iy3Dh5MysI0C_YRI79M2Q4hY-YmLn_uPG5mXHbfxt6SWnFPIDCSdjo34lE8jxinrckuo2CNR-AunmL7ns8mMQ6AsDUJSFvSKMpRly3ZcuNJ8ho73Cg-aCa4EcncEnhTilsB2lKdgx6clKk9N_ApB_n9B4ZsaxpmkRZ7gej0OLGkxcmGcYCVMbdgsOYb5U-TvA_KyhIuvyaSGg5IDJJlQHgLI36gOi3Kx1g3Q2dcycIraZkIiAKaHCuKtk");'></div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<span class="text-[10px] uppercase tracking-widest text-violet-400 font-bold">L&amp;D • Experience</span>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-violet-300 transition-colors">Personalized Learning Platform</h3>
+<p class="text-gray-500 text-sm line-clamp-2">Adaptive curricula tailored to individual career progression paths.</p>
+<div class="flex items-center gap-4 mt-2 text-gray-400">
+<span class="text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">thumb_up</span> 42</span>
+<span class="text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat_bubble</span> 15</span>
+</div>
+</div>
+</div>
+<div class="glass-card idea-hover group rounded-2xl p-6 transition-all duration-300 flex gap-6 cursor-pointer">
+<div class="w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+<div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCl6OfqiCBe1D6fA_3IEINNyViJxMbocLPBaVnZgD2IZIKUQlEXdc-n6aMl-5fPMQ_vzechuMc_NpEMIAWFEMbmlVdRUhB1R9nQ2ajXeGUSl0Uk3Zk_MJqCDC_nvBrX7ats3KeD7aCDY6lD0HkDcA3W-fEIkhyQ89B8ebq_einyv1BXwdgy-QJsd58VSi4Rd0c7bpnRuzr5_h7Es3fllkfYsux7YPqdPjbPuzhzocw1QQz-68r2UVnMYA8-ftW-K83BY3oIvTJ82uI");'></div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<span class="text-[10px] uppercase tracking-widest text-violet-400 font-bold">Sustainability • ESG</span>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-violet-300 transition-colors">Sustainable Packaging Initiative</h3>
+<p class="text-gray-500 text-sm line-clamp-2">Replacing non-recyclable materials with biodegradable starch-based alternatives.</p>
+<div class="flex items-center gap-4 mt-2 text-gray-400">
+<span class="text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">thumb_up</span> 19</span>
+<span class="text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat_bubble</span> 4</span>
+</div>
+</div>
+</div>
+<div class="glass-card idea-hover group rounded-2xl p-6 transition-all duration-300 flex gap-6 cursor-pointer">
+<div class="w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+<div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARnQAH30n_zwW7l4PAh85mu4KfbM2dbR_dxIK3m9PYOKGsX9P2X9ugb8fXvE2sBjOyO1YzpJRhhvT3dAh41gaG42xStNAEIV-hUWpBy1GMZXiKQr7Wnj7IEI4y6g6elo8uDUonmFzFYG27y7wWR17PkKgfoUH44p6w8z2JgFjkmQ2KmX9o9w_mSYM9hHY6VxFRogITurhXx3W5dd4301Og77ajvwx3zhcZbJaAIY58U81kr8KWTO5SfZw-bCI4vFentyXL_SSLCCY");'></div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<span class="text-[10px] uppercase tracking-widest text-violet-400 font-bold">Gamification • Culture</span>
+<h3 class="text-white text-lg font-bold leading-snug group-hover:text-violet-300 transition-colors">Gamified Employee Training</h3>
+<p class="text-gray-500 text-sm line-clamp-2">Turning routine compliance modules into engaging leaderboard-driven challenges.</p>
+<div class="flex items-center gap-4 mt-2 text-gray-400">
+<span class="text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">thumb_up</span> 31</span>
+<span class="text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat_bubble</span> 12</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 rounded-full border border-white/20 hover:border-violet-500 hover:text-violet-400 transition-all text-sm font-bold text-gray-400">
+               Load More Submissions
+             </button>
+</div>
+</main>
+<footer class="mt-auto border-t border-white/5 py-8 px-10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-600 text-xs">© 2024 CRUDZASO Internal Systems. All Rights Reserved.</p>
+<div class="flex gap-6">
+<a class="text-gray-600 hover:text-white transition-colors text-xs" href="#">Privacy Policy</a>
+<a class="text-gray-600 hover:text-white transition-colors text-xs" href="#">Terms of Use</a>
+<a class="text-gray-600 hover:text-white transition-colors text-xs" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>
