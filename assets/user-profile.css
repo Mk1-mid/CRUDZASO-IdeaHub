@@ -1,5 +1,8 @@
-/* IdeaHub Premium User Profile */
+/* ============================================
+   IdeaHub Premium User Profile - CSS
+   ============================================ */
 
+/* Root Variables */
 :root {
   --deep-charcoal: #0a0a0c;
   --card-bg: rgba(255, 255, 255, 0.03);
@@ -8,7 +11,9 @@
   --soft-gray: #9ca3af;
 }
 
-/* Global styles */
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
 body {
   font-family: 'Manrope', sans-serif;
   background-color: var(--deep-charcoal);
@@ -19,16 +24,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Layout */
-.relative.flex {
-  position: relative;
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
+/* ============================================
+   LAYOUT
+   ============================================ */
 .layout-container {
   display: flex;
   height: 100%;
@@ -36,7 +34,9 @@ body {
   flex-direction: column;
 }
 
-/* Header */
+/* ============================================
+   HEADER STYLES
+   ============================================ */
 header {
   display: flex;
   align-items: center;
@@ -51,22 +51,18 @@ header {
   z-index: 50;
 }
 
-/* Logo section */
+/* Logo Section */
 header .flex.items-center.gap-3 {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-header .flex.items-center.gap-3 > div {
+header .p-2 {
   padding: 0.5rem;
   border-radius: 0.75rem;
   background: rgba(139, 92, 246, 0.2);
   color: #a78bfa;
-}
-
-header .material-symbols-outlined {
-  font-size: 1.5rem;
 }
 
 header h2 {
@@ -75,6 +71,10 @@ header h2 {
   font-weight: 800;
   letter-spacing: -0.025em;
   margin: 0;
+}
+
+header .material-symbols-outlined {
+  font-size: 1.5rem;
 }
 
 /* Navigation */
@@ -103,19 +103,15 @@ nav a.text-white {
   border-bottom-color: #8b5cf6;
 }
 
-/* Header right section */
-.flex.items-center.gap-4 {
+/* Header Actions */
+header .flex.items-center.gap-4 {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.pl-6.border-l {
   padding-left: 1.5rem;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Logout button */
 button {
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
@@ -132,7 +128,7 @@ button:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Profile avatar in header */
+/* Profile Avatar in Header */
 header .size-10 {
   width: 2.5rem;
   height: 2.5rem;
@@ -141,15 +137,9 @@ header .size-10 {
   padding: 2px;
 }
 
-header .size-10 > div {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Main content */
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
 main {
   flex: 1;
   padding: 3rem 2.5rem;
@@ -158,8 +148,10 @@ main {
   width: 100%;
 }
 
-/* Profile header section */
-.flex.flex-col.md\:flex-row {
+/* ============================================
+   PROFILE HEADER SECTION
+   ============================================ */
+main > div:first-of-type {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,14 +160,14 @@ main {
 }
 
 @media (min-width: 768px) {
-  .flex.flex-col.md\:flex-row {
+  main > div:first-of-type {
     flex-direction: row;
     align-items: flex-end;
   }
 }
 
-/* Large profile avatar */
-.relative .size-48 {
+/* Profile Avatar */
+.size-48 {
   width: 12rem;
   height: 12rem;
   border-radius: 50%;
@@ -184,8 +176,9 @@ main {
 }
 
 .gradient-border {
-  background: linear-gradient(var(--deep-charcoal), var(--deep-charcoal)) padding-box,
-              linear-gradient(135deg, var(--vibrant-violet), #4f46e5) border-box;
+  background:
+    linear-gradient(var(--deep-charcoal), var(--deep-charcoal)) padding-box,
+    linear-gradient(135deg, var(--vibrant-violet), #4f46e5) border-box;
   border: 4px solid transparent;
 }
 
@@ -198,7 +191,7 @@ main {
   background-color: #1a1a1c;
 }
 
-/* Verified badge */
+/* Verified Badge */
 .absolute.bottom-2 {
   position: absolute;
   bottom: 0.5rem;
@@ -218,19 +211,19 @@ main {
   font-size: 0.75rem;
 }
 
-/* Profile info */
-.flex-1 {
+/* Profile Info */
+main > div:first-of-type > div:nth-child(2) {
   flex: 1;
   text-align: center;
 }
 
 @media (min-width: 768px) {
-  .flex-1 {
+  main > div:first-of-type > div:nth-child(2) {
     text-align: left;
   }
 }
 
-.flex-1 h1 {
+main h1 {
   font-size: 2.25rem;
   font-weight: 800;
   letter-spacing: -0.025em;
@@ -238,7 +231,7 @@ main {
   margin: 0 0 0.25rem 0;
 }
 
-.flex-1 .text-violet-400 {
+main .text-violet-400 {
   color: #a78bfa;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -246,7 +239,7 @@ main {
   font-size: 0.75rem;
 }
 
-.flex-1 .flex.items-center {
+main .flex.items-center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,21 +249,14 @@ main {
 }
 
 @media (min-width: 768px) {
-  .flex-1 .flex.items-center {
+  main .flex.items-center {
     justify-content: flex-start;
   }
 }
 
-.flex-1 .material-symbols-outlined {
-  font-size: 0.875rem;
-}
-
-.flex-1 p {
-  font-size: 0.875rem;
-  margin: 0;
-}
-
-/* Glass card */
+/* ============================================
+   GLASS CARD COMPONENT
+   ============================================ */
 .glass-card {
   background: var(--card-bg);
   backdrop-filter: blur(12px);
@@ -278,7 +264,7 @@ main {
   border: 1px solid var(--glass-border);
 }
 
-/* Stats card */
+/* Stats Card */
 .glass-card.rounded-3xl {
   border-radius: 1.5rem;
   padding: 2rem;
@@ -327,15 +313,17 @@ main {
   -webkit-background-clip: text;
 }
 
-/* Section header */
-.flex.items-center.gap-4.mb-8 {
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+main .flex.items-center.gap-4.mb-8 {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
 }
 
-.flex.items-center.gap-4.mb-8 h2 {
+main .flex.items-center.gap-4.mb-8 h2 {
   font-size: 1.25rem;
   font-weight: 700;
   color: white;
@@ -343,13 +331,15 @@ main {
   margin: 0;
 }
 
-.h-px {
+main .h-px {
   height: 1px;
   width: 100%;
   background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
 }
 
-/* Grid layout */
+/* ============================================
+   GRID LAYOUT
+   ============================================ */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -362,7 +352,9 @@ main {
   }
 }
 
-/* Idea card */
+/* ============================================
+   IDEA CARD
+   ============================================ */
 .idea-hover {
   border-radius: 1rem;
   padding: 1.5rem;
@@ -378,7 +370,7 @@ main {
   border-color: rgba(139, 92, 246, 0.3);
 }
 
-/* Idea image */
+/* Idea Image Container */
 .w-32.h-32 {
   width: 8rem;
   height: 8rem;
@@ -393,14 +385,7 @@ main {
   filter: grayscale(0);
 }
 
-.w-32.h-32 > div {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Idea content */
+/* Idea Content */
 .idea-hover .flex.flex-col {
   display: flex;
   flex-direction: column;
@@ -439,7 +424,7 @@ main {
   margin: 0;
 }
 
-/* Engagement stats */
+/* Engagement Stats */
 .idea-hover .flex.items-center.gap-4 {
   display: flex;
   align-items: center;
@@ -455,11 +440,9 @@ main {
   gap: 0.25rem;
 }
 
-.idea-hover .text-xs .material-symbols-outlined {
-  font-size: 0.75rem;
-}
-
-/* Load more button */
+/* ============================================
+   LOAD MORE BUTTON
+   ============================================ */
 .mt-12 {
   margin-top: 3rem;
   display: flex;
@@ -483,7 +466,9 @@ main {
   color: #a78bfa;
 }
 
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -528,32 +513,34 @@ footer a:hover {
   color: white;
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 @media (max-width: 768px) {
   header {
     padding: 1rem 1.5rem;
   }
-  
+
   nav {
     gap: 1rem;
   }
-  
+
   main {
     padding: 2rem 1.5rem;
   }
-  
-  .flex-1 h1 {
+
+  main h1 {
     font-size: 1.875rem;
   }
-  
+
   .glass-card.rounded-3xl {
     min-width: auto;
   }
-  
+
   .idea-hover {
     flex-direction: column;
   }
-  
+
   .w-32.h-32 {
     width: 100%;
     aspect-ratio: 16 / 9;
