@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Premium User Profile - IdeaHub Platform" />
+    <title> User Profile | IdeaHub</title>
+
+    <!-- Favicon -->
+    <link
+      href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+      rel="icon"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./assets/user-profile.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+
+  <body class="app-body">
+    <!-- Main Container -->
+    <div class="app-container">
+      <!-- Layout Container -->
+      <div class="layout-container">
+        <!-- Header -->
+        <header class="app-header">
+          <!-- Logo Section -->
+          <div class="header-logo">
+            <div class="logo-icon">
+              <span class="icon-logo">lightbulb</span>
+            </div>
+            <h2 class="logo-text">
+              IdeaHub
+            </h2>
+          </div>
+
+          <!-- Navigation & Actions -->
+          <div class="header-actions">
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link nav-link-active" href="#">My Profile</a>
+              <a class="nav-link" href="#">Explore</a>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="header-right">
+              <button class="logout-btn">
+                Logout
+              </button>
+
+              <!-- Profile Avatar -->
+              <div class="header-avatar"></div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+          <!-- Profile Header Section -->
+          <div class="profile-header">
+            <!-- Profile Avatar -->
+            <div class="profile-avatar-wrapper">
+              <div class="profile-avatar-container">
+                <div class="profile-avatar-inner"></div>
+              </div>
+              <div class="profile-badge">
+                <span class="icon-verified">verified</span>
+              </div>
+            </div>
+
+            <!-- Profile Info -->
+            <div class="profile-info">
+              <div class="profile-details">
+                <h1 class="profile-name">temp</h1>
+                <p class="profile-role">Senior Product Strategist</p>
+                <div class="profile-contact">
+                  <span class="icon-mail">mail</span>
+                  <p class="text-contact">temp@crudzaso.com</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats Card -->
+            <div class="stats-card">
+              <div class="stats-icon">
+                <span class="icon-stats">insights</span>
+              </div>
+              <p class="stats-label">Total Ideas</p>
+              <p class="stats-value">12</p>
+            </div>
+          </div>
+
+          <!-- Section Title -->
+          <div class="section-header">
+            <h2 class="section-title">
+              Active Initiatives
+            </h2>
+            <div class="section-divider"></div>
+          </div>
+
+          <!-- Ideas Grid -->
+          <div class="ideas-grid">
+            <!-- Idea Card 1 -->
+            <div class="idea-card">
+              <div class="idea-image idea-image-cyan"></div>
+              <div class="idea-content">
+                <span class="idea-category">Innovation • AI</span>
+                <h3 class="idea-title">AI-Powered Customer Service Chatbot</h3>
+                <p class="idea-description">
+                  Next-generation language models applied to internal support tickets.
+                </p>
+                <div class="idea-stats">
+                  <span class="idea-stat">
+                    <span class="icon-stat">thumb_up</span>
+                    24
+                  </span>
+                  <span class="idea-stat">
+                    <span class="icon-stat">chat_bubble</span>
+                    8
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Idea Card 2 -->
+            <div class="idea-card">
+              <div class="idea-image idea-image-pink"></div>
+              <div class="idea-content">
+                <span class="idea-category">L&amp;D • Experience</span>
+                <h3 class="idea-title">Personalized Learning Platform</h3>
+                <p class="idea-description">
+                  Adaptive curricula tailored to individual career progression paths.
+                </p>
+                <div class="idea-stats">
+                  <span class="idea-stat">
+                    <span class="icon-stat">thumb_up</span>
+                    42
+                  </span>
+                  <span class="idea-stat">
+                    <span class="icon-stat">chat_bubble</span>
+                    15
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Idea Card 3 -->
+            <div class="idea-card">
+              <div class="idea-image idea-image-green"></div>
+              <div class="idea-content">
+                <span class="idea-category">Sustainability • ESG</span>
+                <h3 class="idea-title">Sustainable Packaging Initiative</h3>
+                <p class="idea-description">
+                  Replacing non-recyclable materials with biodegradable starch-based
+                  alternatives.
+                </p>
+                <div class="idea-stats">
+                  <span class="idea-stat">
+                    <span class="icon-stat">thumb_up</span>
+                    19
+                  </span>
+                  <span class="idea-stat">
+                    <span class="icon-stat">chat_bubble</span>
+                    4
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Idea Card 4 -->
+            <div class="idea-card">
+              <div class="idea-image idea-image-amber"></div>
+              <div class="idea-content">
+                <span class="idea-category">Gamification • Culture</span>
+                <h3 class="idea-title">Gamified Employee Training</h3>
+                <p class="idea-description">
+                  Turning routine compliance modules into engaging leaderboard-driven
+                  challenges.
+                </p>
+                <div class="idea-stats">
+                  <span class="idea-stat">
+                    <span class="icon-stat">thumb_up</span>
+                    31
+                  </span>
+                  <span class="idea-stat">
+                    <span class="icon-stat">chat_bubble</span>
+                    12
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Load More Button -->
+          <div class="load-more-container">
+            <button class="load-more-btn">
+              Load More Submissions
+            </button>
+          </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+          <div class="footer-container">
+            <p class="footer-copyright">
+              © 2024 CRUDZASO Internal Systems. All Rights Reserved.
+            </p>
+            <div class="footer-links">
+              <a class="footer-link" href="#">Privacy Policy</a>
+              <a class="footer-link" href="#">Terms of Use</a>
+              <a class="footer-link" href="#">Help Center</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

@@ -14,7 +14,7 @@
 /* ============================================
    GLOBAL STYLES
    ============================================ */
-body {
+.app-body {
   font-family: 'Manrope', sans-serif;
   background-color: var(--deep-charcoal);
   color: white;
@@ -24,9 +24,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ============================================
-   LAYOUT
-   ============================================ */
+/* Main Containers */
+.app-container {
+  position: relative;
+  display: flex;
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
 .layout-container {
   display: flex;
   height: 100%;
@@ -37,7 +45,7 @@ body {
 /* ============================================
    HEADER STYLES
    ============================================ */
-header {
+.app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -52,20 +60,28 @@ header {
 }
 
 /* Logo Section */
-header .flex.items-center.gap-3 {
+.header-logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-header .p-2 {
+.logo-icon {
   padding: 0.5rem;
   border-radius: 0.75rem;
   background: rgba(139, 92, 246, 0.2);
   color: #a78bfa;
 }
 
-header h2 {
+.icon-logo {
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.5rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-text {
   color: white;
   font-size: 1.25rem;
   font-weight: 800;
@@ -73,18 +89,20 @@ header h2 {
   margin: 0;
 }
 
-header .material-symbols-outlined {
-  font-size: 1.5rem;
+/* Navigation */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
 }
 
-/* Navigation */
-nav {
+.nav-menu {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-nav a {
+.nav-link {
   color: #9ca3af;
   font-size: 0.875rem;
   font-weight: 600;
@@ -94,17 +112,17 @@ nav a {
   border-bottom: 2px solid transparent;
 }
 
-nav a:hover {
+.nav-link:hover {
   color: white;
 }
 
-nav a.text-white {
+.nav-link-active {
   color: white;
   border-bottom-color: #8b5cf6;
 }
 
-/* Header Actions */
-header .flex.items-center.gap-4 {
+/* Header Right */
+.header-right {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -112,7 +130,7 @@ header .flex.items-center.gap-4 {
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-button {
+.logout-btn {
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.05);
@@ -124,23 +142,23 @@ button {
   transition: all 0.2s ease;
 }
 
-button:hover {
+.logout-btn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Profile Avatar in Header */
-header .size-10 {
+.header-avatar {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   border: 1px solid rgba(139, 92, 246, 0.5);
   padding: 2px;
+  background: linear-gradient(to bottom right, rgba(139, 92, 246, 0.3), rgba(88, 28, 135, 0.3));
 }
 
 /* ============================================
    MAIN CONTENT
    ============================================ */
-main {
+.app-main {
   flex: 1;
   padding: 3rem 2.5rem;
   max-width: 80rem;
@@ -151,7 +169,7 @@ main {
 /* ============================================
    PROFILE HEADER SECTION
    ============================================ */
-main > div:first-of-type {
+.profile-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,29 +178,30 @@ main > div:first-of-type {
 }
 
 @media (min-width: 768px) {
-  main > div:first-of-type {
+  .profile-header {
     flex-direction: row;
     align-items: flex-end;
   }
 }
 
-/* Profile Avatar */
-.size-48 {
+/* Profile Avatar Wrapper */
+.profile-avatar-wrapper {
+  position: relative;
+}
+
+.profile-avatar-container {
   width: 12rem;
   height: 12rem;
   border-radius: 50%;
   padding: 4px;
   overflow: hidden;
-}
-
-.gradient-border {
   background:
     linear-gradient(var(--deep-charcoal), var(--deep-charcoal)) padding-box,
     linear-gradient(135deg, var(--vibrant-violet), #4f46e5) border-box;
   border: 4px solid transparent;
 }
 
-.size-48 > div {
+.profile-avatar-inner {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -192,7 +211,7 @@ main > div:first-of-type {
 }
 
 /* Verified Badge */
-.absolute.bottom-2 {
+.profile-badge {
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
@@ -206,32 +225,42 @@ main > div:first-of-type {
   justify-content: center;
 }
 
-.absolute.bottom-2 .material-symbols-outlined {
+.icon-verified {
+  font-family: 'Material Symbols Outlined';
   color: white;
   font-size: 0.75rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Profile Info */
-main > div:first-of-type > div:nth-child(2) {
+.profile-info {
   flex: 1;
   text-align: center;
 }
 
 @media (min-width: 768px) {
-  main > div:first-of-type > div:nth-child(2) {
+  .profile-info {
     text-align: left;
   }
 }
 
-main h1 {
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.profile-name {
   font-size: 2.25rem;
   font-weight: 800;
   letter-spacing: -0.025em;
   color: white;
-  margin: 0 0 0.25rem 0;
+  margin: 0;
 }
 
-main .text-violet-400 {
+.profile-role {
   color: #a78bfa;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -239,33 +268,39 @@ main .text-violet-400 {
   font-size: 0.75rem;
 }
 
-main .flex.items-center {
+.profile-contact {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
   color: #9ca3af;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
-  main .flex.items-center {
+  .profile-contact {
     justify-content: flex-start;
   }
 }
 
-/* ============================================
-   GLASS CARD COMPONENT
-   ============================================ */
-.glass-card {
+.icon-mail {
+  font-family: 'Material Symbols Outlined';
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+}
+
+.text-contact {
+  font-size: 0.875rem;
+}
+
+/* Stats Card */
+.stats-card {
   background: var(--card-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
-}
-
-/* Stats Card */
-.glass-card.rounded-3xl {
   border-radius: 1.5rem;
   padding: 2rem;
   min-width: 240px;
@@ -277,7 +312,7 @@ main .flex.items-center {
   overflow: hidden;
 }
 
-.glass-card .absolute.top-0 {
+.stats-icon {
   position: absolute;
   top: 0;
   right: 0;
@@ -287,15 +322,19 @@ main .flex.items-center {
   transition: all 0.3s ease;
 }
 
-.glass-card:hover .absolute.top-0 {
+.stats-card:hover .stats-icon {
   transform: scale(1.1);
 }
 
-.glass-card .absolute.top-0 .material-symbols-outlined {
+.icon-stats {
+  font-family: 'Material Symbols Outlined';
   font-size: 3.75rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
 }
 
-.glass-card .text-gray-400 {
+.stats-label {
   color: #9ca3af;
   font-size: 0.875rem;
   font-weight: 700;
@@ -304,7 +343,7 @@ main .flex.items-center {
   margin-bottom: 0.5rem;
 }
 
-.glass-card .text-6xl {
+.stats-value {
   color: white;
   font-size: 3.75rem;
   font-weight: 900;
@@ -316,14 +355,14 @@ main .flex.items-center {
 /* ============================================
    SECTION HEADER
    ============================================ */
-main .flex.items-center.gap-4.mb-8 {
+.section-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
 }
 
-main .flex.items-center.gap-4.mb-8 h2 {
+.section-title {
   font-size: 1.25rem;
   font-weight: 700;
   color: white;
@@ -331,7 +370,7 @@ main .flex.items-center.gap-4.mb-8 h2 {
   margin: 0;
 }
 
-main .h-px {
+.section-divider {
   height: 1px;
   width: 100%;
   background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
@@ -340,14 +379,14 @@ main .h-px {
 /* ============================================
    GRID LAYOUT
    ============================================ */
-.grid {
+.ideas-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .grid {
+  .ideas-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -355,23 +394,26 @@ main .h-px {
 /* ============================================
    IDEA CARD
    ============================================ */
-.idea-hover {
+.idea-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
   border-radius: 1rem;
   padding: 1.5rem;
   transition: all 0.3s ease;
   display: flex;
   gap: 1.5rem;
   cursor: pointer;
-  border: 1px solid var(--glass-border);
 }
 
-.idea-hover:hover {
+.idea-card:hover {
   background: rgba(139, 92, 246, 0.05);
   border-color: rgba(139, 92, 246, 0.3);
 }
 
 /* Idea Image Container */
-.w-32.h-32 {
+.idea-image {
   width: 8rem;
   height: 8rem;
   flex-shrink: 0;
@@ -381,19 +423,35 @@ main .h-px {
   transition: filter 0.5s ease;
 }
 
-.idea-hover:hover .w-32.h-32 {
+.idea-card:hover .idea-image {
   filter: grayscale(0);
 }
 
+.idea-image-cyan {
+  background: linear-gradient(to bottom right, rgba(34, 211, 238, 0.2), rgba(59, 130, 246, 0.2));
+}
+
+.idea-image-pink {
+  background: linear-gradient(to bottom right, rgba(236, 72, 153, 0.2), rgba(244, 63, 94, 0.2));
+}
+
+.idea-image-green {
+  background: linear-gradient(to bottom right, rgba(34, 197, 94, 0.2), rgba(5, 150, 105, 0.2));
+}
+
+.idea-image-amber {
+  background: linear-gradient(to bottom right, rgba(245, 158, 11, 0.2), rgba(234, 88, 12, 0.2));
+}
+
 /* Idea Content */
-.idea-hover .flex.flex-col {
+.idea-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
 }
 
-.idea-hover .text-\[10px\] {
+.idea-category {
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -401,7 +459,7 @@ main .h-px {
   font-weight: 700;
 }
 
-.idea-hover h3 {
+.idea-title {
   color: white;
   font-size: 1.125rem;
   font-weight: 700;
@@ -410,22 +468,24 @@ main .h-px {
   transition: color 0.2s ease;
 }
 
-.idea-hover:hover h3 {
+.idea-card:hover .idea-title {
   color: #c4b5fd;
 }
 
-.idea-hover .text-gray-500 {
+.idea-description {
   color: #6b7280;
   font-size: 0.875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  line-clamp: 2;
   margin: 0;
 }
 
 /* Engagement Stats */
-.idea-hover .flex.items-center.gap-4 {
+.idea-stats {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -433,23 +493,31 @@ main .h-px {
   color: #9ca3af;
 }
 
-.idea-hover .text-xs {
+.idea-stat {
   font-size: 0.75rem;
   display: flex;
   align-items: center;
   gap: 0.25rem;
 }
 
+.icon-stat {
+  font-family: 'Material Symbols Outlined';
+  font-size: 0.75rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+}
+
 /* ============================================
    LOAD MORE BUTTON
    ============================================ */
-.mt-12 {
+.load-more-container {
   margin-top: 3rem;
   display: flex;
   justify-content: center;
 }
 
-.mt-12 button {
+.load-more-btn {
   padding: 0.75rem 2rem;
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -461,7 +529,7 @@ main .h-px {
   transition: all 0.2s ease;
 }
 
-.mt-12 button:hover {
+.load-more-btn:hover {
   border-color: #8b5cf6;
   color: #a78bfa;
 }
@@ -469,13 +537,13 @@ main .h-px {
 /* ============================================
    FOOTER
    ============================================ */
-footer {
+.app-footer {
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 2rem 2.5rem;
 }
 
-footer .max-w-7xl {
+.footer-container {
   max-width: 80rem;
   margin: 0 auto;
   display: flex;
@@ -486,30 +554,30 @@ footer .max-w-7xl {
 }
 
 @media (min-width: 768px) {
-  footer .max-w-7xl {
+  .footer-container {
     flex-direction: row;
   }
 }
 
-footer p {
+.footer-copyright {
   color: #4b5563;
   font-size: 0.75rem;
   margin: 0;
 }
 
-footer .flex.gap-6 {
+.footer-links {
   display: flex;
   gap: 1.5rem;
 }
 
-footer a {
+.footer-link {
   color: #4b5563;
   font-size: 0.75rem;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-footer a:hover {
+.footer-link:hover {
   color: white;
 }
 

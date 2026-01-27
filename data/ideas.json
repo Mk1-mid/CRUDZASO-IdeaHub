@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ide1",
+    "color": "cyan",
+    "category": "Innovación",
+    "title": "Explorar ideas de productividad",
+    "description": "Una plataforma para capturar y priorizar ideas rápidamente."
+  },
+  {
+    "id": "ide2",
+    "color": "pink",
+    "category": "UX",
+    "title": "Diseño de panel de usuario",
+    "description": "Mejorar la navegación y accesibilidad del panel."
+  },
+  {
+    "id": "ide3",
+    "color": "green",
+    "category": "Desarrollo",
+    "title": "Backend ligero para ideas",
+    "description": "API mock para servir ideas y estadísticas."
+  },
+  {
+    "id": "ide4",
+    "color": "amber",
+    "category": "Ops",
+    "title": "Monitoreo de rendimiento",
+    "description": "Métricas simples para entender el uso de la app."
+  }
+]
