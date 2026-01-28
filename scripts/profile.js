@@ -1,83 +1,49 @@
-import { getSession, clearSession } from './storage.js';
-import { protectPage, logout } from './auth.js';
+// profile.js - Render user profile dynamically
+import { getSession, getIdeas } from './storage.js';
+import { protectPage } from './auth.js';
 
-protectPage();
-const session = getSession();
-
-function loadProfile() {
-  if (!session) {
-    window.location.href = './login.html';
-  } else {
-    const profileNameEl = document.querySelector('.profile-name');
-    const profileRoleEl = document.querySelector('.profile-role');
-    const contactTextEl = document.querySelector('.text-contact');
-    const statsValueEl = document.querySelector('.stats-value');
-
-    if (profileNameEl) profileNameEl.textContent = session.username;
-    if (profileRoleEl) profileRoleEl.textContent = session.role;
-    if (contactTextEl) contactTextEl.textContent = session.email;
-    if (statsValueEl) statsValueEl.textContent = session.totalIdeas;
-  }
-}
-
-function renderIdeaCard(idea) {
-  const category = idea?.category ?? 'Innovation • AI';
-  const title = idea?.title ?? 'AI-Powered Customer Service Chatbot';
-  const description = idea?.description ?? 'Next-generation language models applied to internal support tickets.';
-  const likes = idea?.likes ?? 24;
-  const comments = idea?.comments ?? 8;
-  const rawColor = (idea && typeof idea.color === 'string') ? idea.color.toLowerCase() : 'cyan';
-  const allowedColors = ['cyan', 'purple', 'yellow', 'green', 'pink', 'blue'];
-  const colorClassSuffix = allowedColors.includes(rawColor) ? rawColor : 'cyan';
-  return `
-    <div class="idea-card">
-      <div class="idea-image idea-image-${colorClassSuffix}"></div>
-      <div class="idea-content">
-        <span class="idea-category">${escapeHtml(category)}</span>
-        <h3 class="idea-title">${escapeHtml(title)}</h3>
-        <p class="idea-description">${escapeHtml(description)}</p>
-        <div class="idea-stats">
-          <span class="idea-stat">
-            <span class="icon-stat">thumb_up</span>${escapeHtml(String(likes))}
-          </span>
-          <span class="idea-stat">
-            <span class="icon-stat">chat_bubble</span>${escapeHtml(String(comments))}
-          </span>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-// Mostrar todas las ideas (no usado en profile.js es para el home.js)
-// function showAllIdeas() {
-//   const ideas = (typeof getAllIdeas === 'function') ? getAllIdeas() : [];
-//   const container = document.getElementById('ideas-container');
-//   if (!container) return;
-//   container.innerHTML = ideas.map(idea => renderIdeaCard(idea)).join('');
-// }
-
-function showProfileIdeas() {
-  const allIdeas = (typeof getAllIdeas === 'function') ? getAllIdeas() : [];
-  const userId = session?.userId;
-  const ideas = userId ? allIdeas.filter(idea => idea.userId === userId) : [];
-
-  const container = document.getElementById('ideas-container');
-  if (!container) return;
-  container.innerHTML = ideas.map(idea => renderIdeaCard(idea)).join('');
-}
-
+// Small HTML escape to prevent basic XSS in profile rendering
 function escapeHtml(str) {
   if (typeof str !== 'string') return str;
   return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
-// Inicialización
+// Render profile into a container element
+export function renderProfile(containerSelector) {
+  const container = document.querySelector(containerSelector);
+  const session = getSession();
+  if (!container) return;
+  if (!session) {
+    container.innerHTML = '<p>Por favor inicia sesión para ver tu perfil.</p>';
+    return;
+  }
+
+  const ideas = getIdeas();
+  const userIdeas = ideas.filter(i => i.userId === session.email);
+  const totalIdeas = userIdeas.length;
+
+  const listItems = userIdeas.map(idea => {
+    const cat = (typeof idea.category === 'string') ? idea.category : 'other';
+    return `<li>${escapeHtml(idea.title)} — <em>${escapeHtml(cat)}</em> (ID: ${idea.id})</li>`;
+  }).join('');
+
+  container.innerHTML = `
+    <h2>Perfil de ${escapeHtml(session.fullName)}</h2>
+    <p>Email: ${escapeHtml(session.email)}</p>
+    <p>Total de ideas creadas: ${totalIdeas}</p>
+    <h3>Ideas creadas:</h3>
+    <ul>${listItems || '<li>No hay ideas creadas todavía.</li>'}</ul>
+  `;
+}
+// Ensure page protection on load and render profile when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  loadProfile();
-  // En profile.js queremos mostrar solo las ideas del usuario
-  showProfileIdeas();
+    // Redirect if not logged in
+    protectPage();
+    // Render profile into a known container
+    renderProfile('#profile-container');
 });

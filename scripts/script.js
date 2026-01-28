@@ -1,6 +1,10 @@
 // script/login.js - Lógica de login
 
-import { validateUser, saveSession, getUsers } from './storage.js';
+import { validateUser, saveSession, getUsers, isLoggedIn } from './storage.js';
+import { redirectIfLoggedIn } from './auth.js';
+
+// Verificar si ya está logueado
+redirectIfLoggedIn();
 
 addEventListener('DOMContentLoaded', () => {
     console.log('login.js loaded');
@@ -45,7 +49,7 @@ addEventListener('DOMContentLoaded', () => {
 
             // Redireccionar
             setTimeout(() => {
-                window.location.href = 'dashboard.html';
+                window.location.href = 'ideas.html';
             }, 1000);
         } else {
             console.log('Credenciales incorrectas');

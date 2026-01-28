@@ -1,5 +1,26 @@
 // auth.js - Manejo de autenticación
-import { addUser, userExists, getUsers } from './storage.js';
+import { addUser, userExists, getUsers, getSession, clearSession, isLoggedIn } from './storage.js';
+
+// ========== FUNCIONES DE PROTECCIÓN ==========
+
+export function protectPage() {
+    if (!isLoggedIn()) {
+        window.location.href = './index.html';
+    }
+}
+
+export function redirectIfLoggedIn() {
+    if (isLoggedIn()) {
+        window.location.href = './ideas.html';
+    }
+}
+
+export function logout() {
+    clearSession();
+    window.location.href = './index.html';
+}
+
+// ========== EVENTO DE CARGA DEL DOM ==========
 
 addEventListener('DOMContentLoaded', () => {
     console.log("auth.js loaded");
