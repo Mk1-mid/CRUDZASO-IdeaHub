@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <!-- Google Fonts -->
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap" 
+        rel="stylesheet"
+    />
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" 
+        rel="stylesheet"
+    />
+    
+    <!-- Title & Favicon -->
+    <title>IdeaHub | CRUDZASO</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Custom Styles -->
+    <style type="text/tailwindcss">
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --accent-glow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+        
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .input-glass {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .input-glass:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(96, 165, 250, 0.5);
+            box-shadow: var(--accent-glow);
+        }
+        
+        .gradient-bg {
+            background: radial-gradient(circle at top left, #4c1d95, #1e3a8a, #0f172a);
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 antialiased overflow-x-hidden">
+    
+    <!-- Main Container -->
+    <div class="relative flex min-h-screen w-full flex-col items-center justify-center gradient-bg LoginForm" 
+         style='font-family: Manrope, "Noto Sans", sans-serif;'>
+        
+        <!-- ========== HEADER LOGO ========== -->
+        <div class="absolute top-10 flex items-center gap-3">
+            
+            <!-- Logo Icon -->
+            <div class="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20">
+                <svg class="size-6 text-white" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_6_330)">
+                        <path 
+                            clip-rule="evenodd" 
+                            d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" 
+                            fill="currentColor" 
+                            fill-rule="evenodd">
+                        </path>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_6_330">
+                            <rect fill="white" height="48" width="48"></rect>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            
+            <!-- Brand Name -->
+            <span class="text-white text-2xl font-extrabold tracking-tight">IdeaHub</span>
+            
+        </div>
+        
+        <!-- ========== LOGIN CARD ========== -->
+        <div class="glass-card w-full max-w-[440px] rounded-[32px] p-10 flex flex-col gap-8 mx-4">
+            
+            <!-- Card Header -->
+            <div class="text-center space-y-2">
+                <h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">
+                    Welcome back
+                </h2>
+                <p class="text-blue-100/60 text-sm font-medium">
+                    Access your employee portal
+                </p>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="space-y-5">
+                
+                <!-- Email Field -->
+                <div class="space-y-2">
+                    <label for="email" class="block text-xs font-bold uppercase tracking-widest text-blue-200/50 px-1">
+                        Corporate Email
+                    </label>
+                    <div class="relative group">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-white/40 text-[20px] transition-colors group-focus-within:text-blue-400">
+                            mail
+                        </span>
+                        <input 
+                            id="email"
+                            class="input-glass w-full h-14 pl-12 pr-4 rounded-2xl text-white placeholder:text-white/20 outline-none focus:ring-0 text-base" 
+                            placeholder="name@crudzaso.com" 
+                            type="email"
+                            required
+                        />
+                    </div>
+                </div>
+                
+                <!-- Password Field -->
+                <div class="space-y-2">
+                    
+                    <!-- Label & Forgot Link -->
+                    <div class="flex justify-between items-center px-1">
+                        <label for="password" class="block text-xs font-bold uppercase tracking-widest text-blue-200/50">
+                            Password
+                        </label>
+                        <a class="text-[11px] font-bold text-blue-400 hover:text-blue-300 uppercase tracking-wider transition-colors" 
+                           href="#">
+                            Forgot?
+                        </a>
+                    </div>
+                    
+                    <!-- Input -->
+                    <div class="relative group">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-white/40 text-[20px] transition-colors group-focus-within:text-blue-400">
+                            lock
+                        </span>
+                        <input 
+                            id="password"
+                            class="input-glass w-full h-14 pl-12 pr-4 rounded-2xl text-white placeholder:text-white/20 outline-none focus:ring-0 text-base" 
+                            placeholder="••••••••" 
+                            type="password"
+                            required
+                        />
+                    </div>
+                    
+                </div>
+                
+                <!-- Submit Button -->
+                <button 
+                    id="submitBtn"
+                    class="w-full h-14 mt-4 bg-white hover:bg-blue-50 text-slate-900 rounded-2xl font-extrabold text-base tracking-wide transition-all duration-200 transform active:scale-[0.98] shadow-lg shadow-white/5" 
+                    type="submit">
+                    Sign In
+                </button>
+                
+            </form>
+            
+            <!-- Create Account Link -->
+            <div class="pt-2 border-t border-white/10 text-center">
+                <p class="text-white/40 text-sm font-medium">
+                    New to the platform? 
+                    <a id="registerLink" class="text-white hover:text-blue-400 font-bold ml-1 transition-colors underline underline-offset-4 decoration-white/20" 
+                       href="./register.html">
+                        Create Account
+                    </a>
+                </p>
+            </div>
+            
+        </div>
+        
+        <!-- ========== FOOTER TEXT ========== -->
+        <div class="absolute bottom-10 text-white/20 text-xs font-bold uppercase tracking-[0.2em] pointer-events-none">
+            Internal Use Only • CRUDZASO Initiatives
+        </div>
+        
+    </div>
+
+    <script type="module" src="script/script.js"></script>
+
+</body>
+</html>
