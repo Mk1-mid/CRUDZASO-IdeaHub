@@ -600,17 +600,4 @@
   main h1 {
     font-size: 1.875rem;
   }
-
-  .glass-card.rounded-3xl {
-    min-width: auto;
-  }
-
-  .idea-hover {
-    flex-direction: column;
-  }
-
-  .w-32.h-32 {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
 }
