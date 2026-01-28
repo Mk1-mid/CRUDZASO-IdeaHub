@@ -20,55 +20,21 @@
     <title>IdeaHub | CRUDZASO</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    
     <!-- Custom Styles -->
-    <style type="text/tailwindcss">
-        :root {
-            --glass-bg: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --accent-glow: 0 0 15px rgba(59, 130, 246, 0.5);
-        }
-        
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-        
-        .input-glass {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .input-glass:focus {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(96, 165, 250, 0.5);
-            box-shadow: var(--accent-glow);
-        }
-        
-        .gradient-bg {
-            background: radial-gradient(circle at top left, #4c1d95, #1e3a8a, #0f172a);
-        }
-    </style>
+    <link href="./assets/css/login.css" rel="stylesheet"/>
 </head>
 
-<body class="m-0 p-0 antialiased overflow-x-hidden">
+<body>
     
     <!-- Main Container -->
-    <div class="relative flex min-h-screen w-full flex-col items-center justify-center gradient-bg LoginForm" 
-         style='font-family: Manrope, "Noto Sans", sans-serif;'>
+    <div class="gradient-bg LoginForm">
         
         <!-- ========== HEADER LOGO ========== -->
-        <div class="absolute top-10 flex items-center gap-3">
+        <div class="absolute top-10">
             
             <!-- Logo Icon -->
-            <div class="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20">
-                <svg class="size-6 text-white" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <div>
+                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_6_330)">
                         <path 
                             clip-rule="evenodd" 
@@ -86,19 +52,19 @@
             </div>
             
             <!-- Brand Name -->
-            <span class="text-white text-2xl font-extrabold tracking-tight">IdeaHub</span>
+            <span>IdeaHub</span>
             
         </div>
         
         <!-- ========== LOGIN CARD ========== -->
-        <div class="glass-card w-full max-w-[440px] rounded-[32px] p-10 flex flex-col gap-8 mx-4">
+        <div class="glass-card">
             
             <!-- Card Header -->
             <div class="text-center space-y-2">
-                <h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">
+                <h2>
                     Welcome back
                 </h2>
-                <p class="text-blue-100/60 text-sm font-medium">
+                <p>
                     Access your employee portal
                 </p>
             </div>
@@ -108,16 +74,16 @@
                 
                 <!-- Email Field -->
                 <div class="space-y-2">
-                    <label for="email" class="block text-xs font-bold uppercase tracking-widest text-blue-200/50 px-1">
+                    <label for="email">
                         Corporate Email
                     </label>
                     <div class="relative group">
-                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-white/40 text-[20px] transition-colors group-focus-within:text-blue-400">
+                        <span class="material-symbols-outlined absolute">
                             mail
                         </span>
                         <input 
                             id="email"
-                            class="input-glass w-full h-14 pl-12 pr-4 rounded-2xl text-white placeholder:text-white/20 outline-none focus:ring-0 text-base" 
+                            class="input-glass" 
                             placeholder="name@crudzaso.com" 
                             type="email"
                             required
@@ -129,24 +95,23 @@
                 <div class="space-y-2">
                     
                     <!-- Label & Forgot Link -->
-                    <div class="flex justify-between items-center px-1">
-                        <label for="password" class="block text-xs font-bold uppercase tracking-widest text-blue-200/50">
+                    <div class="flex justify-between">
+                        <label for="password">
                             Password
                         </label>
-                        <a class="text-[11px] font-bold text-blue-400 hover:text-blue-300 uppercase tracking-wider transition-colors" 
-                           href="#">
+                        <a href="#">
                             Forgot?
                         </a>
                     </div>
                     
                     <!-- Input -->
                     <div class="relative group">
-                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-white/40 text-[20px] transition-colors group-focus-within:text-blue-400">
+                        <span class="material-symbols-outlined absolute">
                             lock
                         </span>
                         <input 
                             id="password"
-                            class="input-glass w-full h-14 pl-12 pr-4 rounded-2xl text-white placeholder:text-white/20 outline-none focus:ring-0 text-base" 
+                            class="input-glass" 
                             placeholder="••••••••" 
                             type="password"
                             required
@@ -158,7 +123,6 @@
                 <!-- Submit Button -->
                 <button 
                     id="submitBtn"
-                    class="w-full h-14 mt-4 bg-white hover:bg-blue-50 text-slate-900 rounded-2xl font-extrabold text-base tracking-wide transition-all duration-200 transform active:scale-[0.98] shadow-lg shadow-white/5" 
                     type="submit">
                     Sign In
                 </button>
@@ -166,11 +130,10 @@
             </form>
             
             <!-- Create Account Link -->
-            <div class="pt-2 border-t border-white/10 text-center">
-                <p class="text-white/40 text-sm font-medium">
+            <div class="pt-2 border-t">
+                <p>
                     New to the platform? 
-                    <a id="registerLink" class="text-white hover:text-blue-400 font-bold ml-1 transition-colors underline underline-offset-4 decoration-white/20" 
-                       href="./register.html">
+                    <a id="registerLink" href="./register.html">
                         Create Account
                     </a>
                 </p>
@@ -179,13 +142,13 @@
         </div>
         
         <!-- ========== FOOTER TEXT ========== -->
-        <div class="absolute bottom-10 text-white/20 text-xs font-bold uppercase tracking-[0.2em] pointer-events-none">
+        <div class="absolute bottom-10">
             Internal Use Only • CRUDZASO Initiatives
         </div>
         
     </div>
 
-    <script type="module" src="script/script.js"></script>
+    <script type="module" src="./scripts/script.js"></script>
 
 </body>
 </html>

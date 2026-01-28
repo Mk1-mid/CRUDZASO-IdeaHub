@@ -91,3 +91,90 @@ function showMessage(message, type) {
         messageElement.style.display = 'none';
     }, 3000);
 }
+// ============================================
+// IDEAS PAGE - Modal Handlers
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements
+    const createIdeaBtn = document.getElementById('create_idea');
+    const cancelIdeaBtn = document.getElementById('cancel_idea');
+    const ideaFormOverlay = document.getElementById('idea_form_overlay');
+    const ideaForm = document.getElementById('idea_form');
+    
+    // Open modal
+    if (createIdeaBtn) {
+        createIdeaBtn.addEventListener('click', function() {
+            if (ideaFormOverlay) {
+                ideaFormOverlay.classList.add('show');
+            }
+        });
+    }
+    
+    // Close modal
+    function closeModal() {
+        if (ideaFormOverlay) {
+            ideaFormOverlay.classList.remove('show');
+        }
+        // Reset form
+        if (ideaForm) {
+            ideaForm.reset();
+        }
+    }
+    
+    // Cancel button
+    if (cancelIdeaBtn) {
+        cancelIdeaBtn.addEventListener('click', closeModal);
+    }
+    
+    // Close when clicking outside modal
+    if (ideaFormOverlay) {
+        ideaFormOverlay.addEventListener('click', function(e) {
+            if (e.target === ideaFormOverlay) {
+                closeModal();
+            }
+        });
+    }
+    
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && ideaFormOverlay && ideaFormOverlay.classList.contains('show')) {
+            closeModal();
+        }
+    });
+    
+    // Handle form submission
+    if (ideaForm) {
+        ideaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const title = document.getElementById('idea_title').value;
+            const description = document.getElementById('idea_description').value;
+            const category = document.getElementById('idea_category').value;
+            
+            // Create idea object
+            const idea = {
+                id: Date.now(),
+                title: title,
+                description: description,
+                category: category,
+                date: new Date().toISOString(),
+                likes: 0,
+                comments: 0
+            };
+            
+            // Here you would typically save to localStorage or send to a server
+            console.log('New idea created:', idea);
+            
+            // For now, just show a success message
+            alert('Idea creada exitosamente!');
+            
+            // Close modal
+            closeModal();
+            
+            // Optionally, refresh the ideas grid here
+            // loadIdeas();
+        });
+    }
+});

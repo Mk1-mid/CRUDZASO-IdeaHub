@@ -1,0 +1,701 @@
+/* IdeaHub Registration - Unified Theme Styles */
+
+/* ============================================
+   DARK THEME VARIABLES (Default)
+   ============================================ */
+:root {
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.125);
+  --body-bg: #0a0a0c;
+  --text-color: white;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #cbd5e1;
+  --heading-color: white;
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-placeholder: #475569;
+  --input-focus-shadow: rgba(168, 85, 247, 0.5);
+  --logo-bg: rgba(255, 255, 255, 0.1);
+  --logo-border: rgba(255, 255, 255, 0.2);
+  --logo-fill: white;
+  --abstract-opacity: 0.4;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --decorative-glow: rgba(139, 92, 246, 0.2);
+  --gradient-text: linear-gradient(to right, #a78bfa, #f472b6);
+  --submit-hover-bg: linear-gradient(to right, #6366f1, #a855f7);
+  --submit-shadow: rgba(0, 0, 0, 0.3);
+  --submit-hover-shadow: rgba(168, 85, 247, 0.6);
+  --link-color: #a855f7;
+  --link-hover: #c084fc;
+}
+
+/* ============================================
+   LIGHT THEME VARIABLES
+   ============================================ */
+body.light-theme {
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --body-bg: #F8FAFC;
+  --text-color: #1e293b;
+  --text-secondary: #64748b;
+  --text-tertiary: #64748b;
+  --heading-color: #0f172a;
+  --input-bg: white;
+  --input-border: #e2e8f0;
+  --input-placeholder: #cbd5e1;
+  --input-focus-shadow: rgba(99, 102, 241, 0.1);
+  --logo-bg: white;
+  --logo-border: #f1f5f9;
+  --logo-fill: #6366f1;
+  --abstract-opacity: 0.1;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --decorative-glow: rgba(191, 219, 254, 0.4);
+  --gradient-text: linear-gradient(to right, #4f46e5, #2563eb);
+  --submit-hover-bg: linear-gradient(to right, #4f46e5, #7c3aed, #2563eb);
+  --submit-shadow: rgba(99, 102, 241, 0.2);
+  --submit-hover-shadow: rgba(99, 102, 241, 0.4);
+  --link-color: #6366f1;
+  --link-hover: #4f46e5;
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+body {
+  font-family: 'Manrope', 'Noto Sans', sans-serif;
+  background-color: var(--body-bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: var(--text-color);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Background mesh - Dark theme */
+body#form {
+  background-color: #0a0a0c;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(168, 85, 247, 0.1) 0px, transparent 50%);
+}
+
+/* Background mesh - Light theme */
+body.light-theme#form {
+  background-color: #F8FAFC;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.08) 0px, transparent 40%),
+    radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.08) 0px, transparent 40%),
+    radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 30%);
+}
+
+/* ============================================
+   ABSTRACT SHAPE DECORATION
+   ============================================ */
+.abstract-shape {
+  background: var(--primary-gradient);
+  filter: blur(60px);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  opacity: var(--abstract-opacity);
+}
+
+body.light-theme .abstract-shape {
+  filter: blur(80px);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+.max-w-7xl {
+  max-width: 80rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .max-w-7xl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+body.light-theme .max-w-7xl {
+  gap: 4rem;
+}
+
+/* ============================================
+   LEFT SECTION - MARKETING CONTENT
+   ============================================ */
+.hidden.lg\:flex {
+  display: none;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding: 0 3rem;
+}
+
+@media (min-width: 1024px) {
+  .hidden.lg\:flex {
+    display: flex;
+  }
+}
+
+body.light-theme .hidden.lg\:flex {
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.hidden.lg\:flex .absolute {
+  position: absolute;
+  top: -5rem;
+  left: -5rem;
+  width: 24rem;
+  height: 24rem;
+}
+
+body.light-theme .hidden.lg\:flex .absolute {
+  top: -8rem;
+  left: -8rem;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden.lg\:flex .relative.z-10 {
+  position: relative;
+  z-index: 10;
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+.flex.items-center.gap-3.mb-12 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+body.light-theme .flex.items-center.gap-3.mb-12 {
+  margin-bottom: 4rem;
+}
+
+.size-10 {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--logo-bg);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--logo-border);
+}
+
+body.light-theme .size-10 {
+  width: 2.75rem;
+  height: 2.75rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.size-10 svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--logo-fill);
+}
+
+.size-10 + span {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--heading-color);
+}
+
+/* ============================================
+   HEADING
+   ============================================ */
+h1 {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+  color: var(--heading-color);
+  margin-top: 0;
+}
+
+body.light-theme h1 {
+  margin-bottom: 2rem;
+}
+
+h1 .text-transparent {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: var(--gradient-text);
+}
+
+h1 + p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 32rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================
+   ILLUSTRATION BOX
+   ============================================ */
+.relative.h-64 {
+  position: relative;
+  height: 16rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+body.light-theme .relative.h-64 {
+  height: 20rem;
+  max-width: 32rem;
+}
+
+.relative.h-64 > .absolute.inset-0 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+body.light-theme .relative.h-64 > .absolute.inset-0 {
+  border-radius: 3rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f1f5f9;
+}
+
+/* Animated Glow - Dark theme */
+.relative.h-64 .size-48 {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #4f46e5, #7c3aed, #ec4899);
+  filter: blur(32px);
+  opacity: 0.5;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.relative.h-64 .absolute.flex {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.relative.h-64 .material-symbols-outlined {
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================
+   PROGRESS DOTS
+   ============================================ */
+.flex.gap-2.mt-4 {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+body.light-theme .flex.gap-2.mt-4 {
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.h-1 {
+  height: 0.25rem;
+  border-radius: 9999px;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+body.light-theme .w-8 {
+  width: 2.5rem;
+}
+
+body.light-theme .w-12 {
+  width: 4rem;
+}
+
+.bg-indigo-500 {
+  background-color: #6366f1;
+}
+
+.bg-purple-500 {
+  background-color: #a855f7;
+}
+
+.bg-pink-500 {
+  background-color: #ec4899;
+}
+
+/* ============================================
+   GLASS CARD - REGISTRATION FORM
+   ============================================ */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  width: 100%;
+  max-width: 28rem;
+  border-radius: 2.5rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .glass-card {
+    padding: 3rem;
+  }
+}
+
+body.light-theme .glass-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px var(--card-shadow);
+}
+
+.glass-card .absolute.-top-24 {
+  position: absolute;
+  top: -6rem;
+  right: -6rem;
+  width: 12rem;
+  height: 12rem;
+  background: var(--decorative-glow);
+  filter: blur(48px);
+}
+
+body.light-theme .glass-card .absolute.-top-24 {
+  top: -3rem;
+  right: -3rem;
+}
+
+.glass-card .relative.z-10 {
+  position: relative;
+  z-index: 10;
+}
+
+/* ============================================
+   FORM HEADER
+   ============================================ */
+.mb-10 {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .mb-10 {
+    text-align: left;
+  }
+}
+
+.glass-card h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+  margin-top: 0;
+}
+
+.glass-card h2 + p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ============================================
+   FORM
+   ============================================ */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+body.light-theme form {
+  gap: 1.25rem;
+}
+
+.space-y-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+body.light-theme .space-y-2 {
+  gap: 0.375rem;
+}
+
+/* ============================================
+   LABELS
+   ============================================ */
+label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  margin-left: 0.25rem;
+}
+
+body.light-theme label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   INPUT CONTAINER
+   ============================================ */
+.relative.group {
+  position: relative;
+}
+
+.relative.group .material-symbols-outlined {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+body.light-theme .relative.group .material-symbols-outlined {
+  color: #94a3b8;
+}
+
+.relative.group:focus-within .material-symbols-outlined {
+  color: #a855f7;
+}
+
+body.light-theme .relative.group:focus-within .material-symbols-outlined {
+  color: #6366f1;
+}
+
+/* ============================================
+   INPUT FIELDS
+   ============================================ */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 1rem;
+  padding: 1rem 1rem 1rem 3rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input::placeholder {
+  color: var(--input-placeholder);
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--input-focus-shadow);
+  border-color: var(--input-focus-shadow);
+}
+
+body.light-theme input:focus {
+  box-shadow: 0 0 0 4px var(--input-focus-shadow);
+  border-color: #6366f1;
+}
+
+/* ============================================
+   EMAIL VALIDATION ICON
+   ============================================ */
+.absolute.right-4 {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.text-green-500 {
+  color: #10b981;
+}
+
+/* ============================================
+   PASSWORD STRENGTH INDICATOR
+   ============================================ */
+.flex.gap-1.mt-2 {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  padding: 0 0.25rem;
+}
+
+body.light-theme .flex.gap-1.mt-2 {
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.h-1.flex-1 {
+  height: 0.25rem;
+  flex: 1;
+  border-radius: 9999px;
+}
+
+body.light-theme .h-1.flex-1 {
+  height: 0.375rem;
+}
+
+.bg-purple-500 {
+  background-color: #a855f7;
+}
+
+.bg-white\/20 {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.light-theme .bg-white\/20 {
+  background-color: #e2e8f0;
+}
+
+.flex.gap-1.mt-2 span {
+  font-size: 0.625rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-left: 0.5rem;
+}
+
+body.light-theme .flex.gap-1.mt-2 span {
+  color: #cbd5e1;
+}
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+.glow-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 15px -3px var(--submit-shadow);
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+body.light-theme .glow-button {
+  background: linear-gradient(to right, #4f46e5, #7c3aed, #2563eb);
+  box-shadow: 0 4px 15px var(--submit-shadow);
+  margin-top: 1.5rem;
+}
+
+.glow-button:hover {
+  background: var(--submit-hover-bg);
+  box-shadow: 0 0 25px var(--submit-hover-shadow);
+  transform: translateY(-1px);
+}
+
+body.light-theme .glow-button:hover {
+  opacity: 0.9;
+  box-shadow: 0 8px 25px var(--submit-hover-shadow);
+}
+
+.glow-button .material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+body.light-theme .glow-button:hover .material-symbols-outlined {
+  transform: translateX(0.25rem);
+  transition: transform 0.2s ease;
+}
+
+/* ============================================
+   FOOTER LINK
+   ============================================ */
+.mt-8 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+body.light-theme .mt-8 {
+  margin-top: 2.5rem;
+}
+
+.mt-8 p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.mt-8 a {
+  color: var(--link-color);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+body.light-theme .mt-8 a {
+  font-weight: 700;
+}
+
+.mt-8 a:hover {
+  color: var(--link-hover);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .glass-card {
+    padding: 1.5rem;
+  }
+}
