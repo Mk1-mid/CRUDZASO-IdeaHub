@@ -8,10 +8,15 @@ function loadProfile() {
   if (!session) {
     window.location.href = './login.html';
   } else {
-    document.getElementById('profile-name').textContent = session.username;
-    document.getElementById('profile-role').textContent = session.role;
-    document.getElementById('text-contact').textContent = session.email;
-    document.getElementById('stats-value').textContent = session.totalIdeas;
+    const profileNameEl = document.querySelector('.profile-name');
+    const profileRoleEl = document.querySelector('.profile-role');
+    const contactTextEl = document.querySelector('.text-contact');
+    const statsValueEl = document.querySelector('.stats-value');
+
+    if (profileNameEl) profileNameEl.textContent = session.username;
+    if (profileRoleEl) profileRoleEl.textContent = session.role;
+    if (contactTextEl) contactTextEl.textContent = session.email;
+    if (statsValueEl) statsValueEl.textContent = session.totalIdeas;
   }
 }
 
