@@ -1,0 +1,74 @@
+:root {
+    --bg-main: #0f172a;
+    --sidebar-bg: #070b14;
+    --accent-product: #06b6d4;
+    --accent-experiment: #d946ef;
+    --accent-improvement: #8b5cf6;
+    --glass-bg: rgba(30, 41, 59, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--bg-main);
+}
+
+.heading-font {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+.neon-badge-cyan {
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid var(--accent-product);
+    color: var(--accent-product);
+}
+
+.neon-badge-magenta {
+    box-shadow: 0 0 15px rgba(217, 70, 239, 0.4);
+    background: rgba(217, 70, 239, 0.1);
+    border: 1px solid var(--accent-experiment);
+    color: var(--accent-experiment);
+}
+
+.neon-badge-violet {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid var(--accent-improvement);
+    color: var(--accent-improvement);
+}
+
+.fab-glow {
+    background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+}
+.fab-glow:hover {
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.7);
+}
+
+::-webkit-scrollbar {
+        width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
