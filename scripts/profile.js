@@ -1,6 +1,5 @@
 import { getSession, clearSession } from './storage.js';
 import { protectPage, logout } from './auth.js';
-import { getIdeasByAuthor, getAllIdeas } from './ideas.js';
 
 protectPage();
 const session = getSession();
