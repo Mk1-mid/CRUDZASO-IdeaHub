@@ -26,9 +26,12 @@ function renderIdeaCard(idea) {
   const description = idea?.description ?? 'Next-generation language models applied to internal support tickets.';
   const likes = idea?.likes ?? 24;
   const comments = idea?.comments ?? 8;
+  const rawColor = (idea && typeof idea.color === 'string') ? idea.color.toLowerCase() : 'cyan';
+  const allowedColors = ['cyan', 'purple', 'yellow', 'green', 'pink', 'blue'];
+  const colorClassSuffix = allowedColors.includes(rawColor) ? rawColor : 'cyan';
   return `
     <div class="idea-card">
-      <div class="idea-image idea-image-cyan"></div>
+      <div class="idea-image idea-image-${colorClassSuffix}"></div>
       <div class="idea-content">
         <span class="idea-category">${escapeHtml(category)}</span>
         <h3 class="idea-title">${escapeHtml(title)}</h3>
