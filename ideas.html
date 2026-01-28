@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+        <link href="styles.css" rel="stylesheet"/>
+        <title>IdeaHub | CRUDZASO</title>
+        <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    </head>
+    <body class="text-slate-100 antialiased">
+        <div class="flex h-screen overflow-hidden">
+        <aside class="w-72 bg-[var(--sidebar-bg)] flex flex-col h-full border-r border-white/5">
+            <div class="p-8">
+                <div class="flex items-center gap-3 text-white">
+                    <div class="size-9 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
+                        <svg class="size-5" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h1 class="heading-font text-xl font-bold tracking-tight uppercase">IdeaHub</h1>
+                </div>
+            </div>
+            <nav class="flex-1 px-4 space-y-1">
+                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-4 mb-4 mt-4">
+                    Main Menu
+                </div>
+                <a class="sidebar-link active" href="#">
+                    <span class="material-symbols-outlined text-xl text-cyan-400">grid_view</span>
+                    <span>Feed</span>
+                </a>
+                <a class="sidebar-link" href="#">
+                    <span class="material-symbols-outlined text-xl text-magenta-400 text-fuchsia-400">trending_up</span>
+                    <span>Popular</span>
+                </a>
+                    <a class="sidebar-link" href="#">
+                    <span class="material-symbols-outlined text-xl text-amber-400">stars</span>
+                    <span>Bookmarks</span>
+                </a>
+                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-4 mb-4 mt-10">
+                    Categories
+                </div>
+                <div class="px-2 space-y-3 pt-2">
+                    <label class="flex items-center gap-3 cursor-pointer group px-2">
+                        <input checked="" class="rounded border-slate-700 bg-transparent text-cyan-500 focus:ring-cyan-500/20 w-4 h-4" type="checkbox"/>
+                        <span class="text-sm text-slate-400 group-hover:text-white">Product</span>
+                        <span class="ml-auto w-2 h-2 rounded-full bg-[var(--accent-product)] shadow-[0_0_8px_var(--accent-product)]"></span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group px-2">
+                        <input checked="" class="rounded border-slate-700 bg-transparent text-violet-500 focus:ring-violet-500/20 w-4 h-4" type="checkbox"/>
+                        <span class="text-sm text-slate-400 group-hover:text-white">Improvement</span>
+                        <span class="ml-auto w-2 h-2 rounded-full bg-[var(--accent-improvement)] shadow-[0_0_8px_var(--accent-improvement)]"></span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group px-2">
+                        <input checked="" class="rounded border-slate-700 bg-transparent text-fuchsia-500 focus:ring-fuchsia-500/20 w-4 h-4" type="checkbox"/>
+                        <span class="text-sm text-slate-400 group-hover:text-white">Experiment</span>
+                        <span class="ml-auto w-2 h-2 rounded-full bg-[var(--accent-experiment)] shadow-[0_0_8px_var(--accent-experiment)]"></span>
+                    </label>
+                </div>
+            </nav>
+            <div class="p-6 border-t border-white/5">
+                <div class="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5">
+                    <div class="size-10 rounded-xl bg-cover bg-center border border-white/10"></div>
+                    <div class="overflow-hidden">
+                            <p class="text-white text-sm font-bold truncate">User</p>
+                            <p class="text-slate-500 text-xs truncate">Position</p>
+                    </div>
+                    <span class="material-symbols-outlined text-slate-500 ml-auto cursor-pointer hover:text-white">more_vert</span>
+                </div>
+            </div>
+        </aside>
+            <main class="flex-1 overflow-y-auto relative scroll-smooth bg-[var(--bg-main)]">
+                <header class="sticky top-0 z-10 bg-[var(--bg-main)]/80 backdrop-blur-xl px-10 py-6 border-b border-white/5">
+                    <div class="flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <h2 class="heading-font text-3xl font-bold text-white tracking-tight">Main Feed</h2>
+                            <p class="text-slate-400 text-sm mt-1">Discover what's brewing at <span class="text-cyan-400 font-bold">CRUDZASO</span></p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="relative group">
+                                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-cyan-400 transition-colors">search</span>
+                                <input class="pl-10 pr-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-xl text-sm w-72 focus:ring-1 focus:ring-cyan-500/50 focus:border-cyan-500/50 focus:outline-none transition-all text-white placeholder-slate-500" placeholder="Search ideas..." type="text"/>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="px-10 pb-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-10">
+                </div>
+                <button id="create_idea" class="fixed bottom-10 right-10 flex items-center justify-center size-16 fab-glow text-white rounded-full hover:scale-110 transition-all z-20">
+                    <span class="material-symbols-outlined text-3xl">add</span>
+                </button>
+            </main>
+        </div>
+        <div id="idea_form_overlay" class="position-fixed top-0 start-0 w-100 h-100 d-none align-items-center justify-content-center z-30"
+            style="background: rgba(0,0,0,.6); backdrop-filter: blur(6px);">
+            <div class="glass-card p-5 rounded-4" style="width: 100%; max-width: 420px;">
+                <h3 class="text-white fw-bold mb-4">Nueva idea</h3>
+                <form id="idea_form" class="d-flex flex-column gap-3">
+                    <div>
+                        <label class="form-label text-slate-300 small">Título</label>
+                        <input id="idea_title" type="text" class="form-control bg-dark text-white border-0" placeholder="Escribe el título" required>
+                    </div>
+                    <div>
+                        <label class="form-label text-slate-300 small">Descripción</label>
+                        <textarea id="idea_description"class="form-control bg-dark text-white border-0" rows="3" placeholder="Describe tu idea" required></textarea>
+                    </div>
+                    <div>
+                        <label class="form-label text-slate-300 small">Categoría</label>
+                        <select id="idea_category" class="form-select bg-dark text-white border-0" required>
+                            <option value="" disabled selected>Selecciona una categoría</option>
+                            <option value="product">Product</option>
+                            <option value="improvement">Improvement</option>
+                            <option value="experiment">Experiment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button type="button" id="cancel_idea" class="btn btn-outline-secondary btn-sm">Cancelar</button>
+                        <button type="submit" id="submit_idea" class="btn btn-info btn-sm text-dark fw-bold">Crear idea</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script src="ui.js"></script>
+    <script src="./scripts/handlers.js"></script>
+</html>
