@@ -1,0 +1,14 @@
+# Archivos de desarrollo interno
+Base_INNER_Card.html
+ROLES.md
+
+# Node modules
+node_modules/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuraciones locales
+*.log
+.env
